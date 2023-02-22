@@ -1,34 +1,34 @@
 const aC = document.querySelector('#AC')
 const MakeMinus = document.querySelector('#MakeMinus')
 
-const percent = document.querySelector('#percent')
-const divide = document.querySelector('#divide')
-const num1 = document.querySelector('#num1')
-const num2 = document.querySelector('#num2')
-const num3 = document.querySelector('#num3')
-const num4 = document.querySelector('#num4')
-const num5 = document.querySelector('#num5')
-const num6 = document.querySelector('#num6')
-const num7 = document.querySelector('#num7')
-const num8 = document.querySelector('#num8')
-const num9 = document.querySelector('#num9')
-const minus = document.querySelector('#minus')
-const plus = document.querySelector('#plus')
-const zero = document.querySelector('#zero')
+const percent = document.querySelector('#percent');
+const divide = document.querySelector('#divide');
+const num1 = document.querySelector('#num1');
+const num2 = document.querySelector('#num2');
+const num3 = document.querySelector('#num3');
+const num4 = document.querySelector('#num4');
+const num5 = document.querySelector('#num5');
+const num6 = document.querySelector('#num6');
+const num7 = document.querySelector('#num7');
+const num8 = document.querySelector('#num8');
+const num9 = document.querySelector('#num9');
+const minus = document.querySelector('#minus');
+const plus = document.querySelector('#plus');
+const zero = document.querySelector('#zero');
 const button = document.querySelectorAll('button');
 const screenNum = document.querySelector('#screenNum');
-const multiply = document.querySelector('#multiply')
-const equal = document.querySelector("#equal")
+const multiply = document.querySelector('#multiply');
+const equal = document.querySelector("#equal");
 
-num1.addEventListener('click', () => { texting(1); })
-num2.addEventListener('click', () => { texting(2); })
-num3.addEventListener('click', () => { texting(3); })
-num4.addEventListener('click', () => { texting(4); })
-num5.addEventListener('click', () => { texting(5); })
-num6.addEventListener('click', () => { texting(6); })
-num7.addEventListener('click', () => { texting(7); })
-num8.addEventListener('click', () => { texting(8); })
-num9.addEventListener('click', () => { texting(9); })
+num1.addEventListener('click', () => { texting(1); });
+num2.addEventListener('click', () => { texting(2); });
+num3.addEventListener('click', () => { texting(3); });
+num4.addEventListener('click', () => { texting(4); });
+num5.addEventListener('click', () => { texting(5); });
+num6.addEventListener('click', () => { texting(6); });
+num7.addEventListener('click', () => { texting(7); });
+num8.addEventListener('click', () => { texting(8); });
+num9.addEventListener('click', () => { texting(9); });
 
 function numBtnColor() {
     let backgroundColorBtn = document.querySelector('.btnBackgroundColor');
@@ -39,7 +39,7 @@ function numBtnColor() {
     setTimeout(() => {
         this.classList.remove('btnBackgroundColor');
     }, 400)
-}
+};
 
 let mathSymbolBeforeNumEnter = false;
 
@@ -215,7 +215,7 @@ equal.addEventListener('click', () => {
     if (isOp) {
         calcResult(op_input)
         if (screenNum.innerText.length > 6) {
-            screenNum.style.fontSize = '20px'
+            screenNum.style.fontSize = '20px';
             screenNum.style.margin = '0 20px 10px 0';
         }
     }
@@ -223,7 +223,7 @@ equal.addEventListener('click', () => {
 
 aC.addEventListener('click', (mathSybols) => {
     for (let sym of symbolList) {
-        sym.classList.remove('SymColorChangeWhenClick')
+        sym.classList.remove('SymColorChangeWhenClick');
     }
     if (ac) {
         numFirst = '';
@@ -235,7 +235,7 @@ aC.addEventListener('click', (mathSybols) => {
         numEnter = false;
     }
     if (!ac) {
-        aC.innerText = 'AC'
+        aC.innerText = 'AC';
     }
     if (screenNum.innerText.length < 6) {
         screenNum.style.fontSize = '55px';
@@ -252,38 +252,38 @@ aC.addEventListener('click', (mathSybols) => {
 
 MakeMinus.addEventListener('click', () => {
     if (isOp === false) {
-        numFirst = parseFloat(numFirst) * -1
-        numFirst = numFirst.toString()
-        screenNum.innerText = numFirst
+        numFirst = parseFloat(numFirst) * -1;
+        numFirst = numFirst.toString();
+        screenNum.innerText = numFirst;
         if (!numEnter) {
-            numFirst = 0
+            numFirst = 0;
             screenNum.innerText = 0;
         }
     } else if (isOp === true) {
-        numSecond = parseFloat(numSecond) * -1
-        numSecond = numSecond.toString()
-        screenNum.innerText = numSecond
+        numSecond = parseFloat(numSecond) * -1;
+        numSecond = numSecond.toString();
+        screenNum.innerText = numSecond;
     }
 })
 
 percent.addEventListener('click', () => {
     decimal = true;
     if (isOp === false) {
-        numFirst = parseFloat(numFirst) * 1 / 100
-        numFirst = numFirst.toString()
-        screenNum.innerText = numFirst
+        numFirst = parseFloat(numFirst) * 1 / 100;
+        numFirst = numFirst.toString();
+        screenNum.innerText = numFirst;
         if (!numEnter) {
-            numFirst = ''
+            numFirst = '';
             screenNum.innerText = 0;
         }
         if (screenNum.innerText.length > 6) {
-            screenNum.style.fontSize = '20px'
+            screenNum.style.fontSize = '20px';
             screenNum.style.margin = '0 20px 10px 0';
         }
         numEnter = true;
     } else if (isOp === true) {
-        numSecond = parseFloat(numSecond) * 1 / 100
-        numSecond = numSecond.toString()
-        screenNum.innerText = numSecond
+        numSecond = parseFloat(numSecond) * 1 / 100;
+        numSecond = numSecond.toString();
+        screenNum.innerText = numSecond;
     }
-})
+});
